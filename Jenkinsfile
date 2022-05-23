@@ -7,7 +7,7 @@ pipeline {
 
         stage('build image') {
             steps {
-                sh 'sudo docker build -t go-violin .'
+                sh 'docker build -t go-violin .'
             }
         }
     }
