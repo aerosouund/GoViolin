@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: violin-deployment
+  labels:
+    app: go-violin
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: go-violin
+  template:
+    metadata:
+      labels:
+        app: go-violin
+    spec:
+      containers:
+      - name: violin
+        image: aerosouund/go-violin:latest
+        ports:
+        - containerPort: 8080
+
+#To get a public IP run : kubectl expose deployment go-violin --type=LoadBalancer --name=violin-service
+
