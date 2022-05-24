@@ -9,9 +9,6 @@ ADD . /go/src/app
 # build the application
 RUN go mod init && go build -o violin
 
-# test the application
-RUN go test -v
-
 # open port 8080
 EXPOSE 8080
 
