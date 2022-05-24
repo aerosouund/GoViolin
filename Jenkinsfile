@@ -11,7 +11,7 @@ pipeline {
         stage('build image') {
             steps {
                 script {
-                    image = docker.build registry + ":$BUILD_NUMBER"
+                    image = docker.build registry + ":latest"
                 }
                 sh 'if sudo docker image ls | grep $BUILD_NUMBER; then echo "SUCCESS"; else echo "FAILED TO BUILD IMAGE"; fi'
             }
@@ -31,7 +31,7 @@ pipeline {
         //remove the built image from the server
         stage('clean up') {
             steps {
-                sh 'docker rmi $registry:$BUILD_NUMBER'
+                sh 'docker rmi $registry:latest'
             }
         }
     }
