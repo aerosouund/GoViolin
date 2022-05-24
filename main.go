@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"github.com/stretchr/testify/assert"
 )
 
 type PageVars struct {
