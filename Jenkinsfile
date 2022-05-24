@@ -1,4 +1,7 @@
 pipeline {
+    environment{
+        registry = "aerosouund/go-violin"
+    }
 
     agent any
 
@@ -7,8 +10,9 @@ pipeline {
 
         stage('build image') {
             steps {
-                sh 'sudo docker build -t go-violin .'
-                sh 'if sudo docker image ls | grep violin; then echo "SUCCESS"; else echo "FAILED TO BUILD IMAGE"; fi'
+                script {
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
     }
