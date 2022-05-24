@@ -1,7 +1,7 @@
 pipeline {
     environment{
         registry = "aerosouund/go-violin"
-        dockerhubID= 'dockerhub_id'
+        dockerhubLogin= 'dockerhub_login'
     }
 
     agent any
@@ -20,7 +20,7 @@ pipeline {
         stage('push image') {
             steps {
                 script {
-                    docker.withRegistry( '', dockerhubID ) {
+                    docker.withRegistry( '', dockerhubLogin ) {
                         image.push()
                     }
                 }
