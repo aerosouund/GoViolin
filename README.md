@@ -11,3 +11,11 @@ Contains:
 * Harmonic and Melodic Minor scales
 * Arpeggios
 * A set of two part scale duet melodies by Franz Wohlfahrt
+
+
+To Build:
+Run Jenkins server with a Multi-branch discovery, the app will build from Jenkinsfile
+
+To deploy:
+1- Configure kubectl to a kubernetes cluster and run kubectl apply on manifests/pod.yml or manifests/deployment.yml
+2- 
