@@ -10,7 +10,7 @@ ADD . /go/src/app
 RUN go mod init && go build -o violin
 
 # test the application
-RUN go test -v
+RUN go get github.com/stretchr/testify/assert && go test -v
 
 # open port 8080
 EXPOSE 8080
