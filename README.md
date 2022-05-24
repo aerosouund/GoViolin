@@ -13,7 +13,7 @@ Contains:
 * A set of two part scale duet melodies by Franz Wohlfahrt
 
 
-To Build:
+To Build: <br />
 Run Jenkins server with a Multi-branch discovery, the app will build from Jenkinsfile
 
 To deploy:
