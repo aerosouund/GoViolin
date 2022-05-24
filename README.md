@@ -16,6 +16,10 @@ Contains:
 To Build: <br />
 Run Jenkins server with a Multi-branch discovery, the app will build from Jenkinsfile
 
-To deploy:
-1- Configure kubectl to a kubernetes cluster and run kubectl apply on manifests/pod.yml or manifests/deployment.yml
-2- 
+To deploy: <br />
+1- Configure kubectl to a kubernetes cluster and run kubectl apply on manifests/pod.yml or manifests/deployment.yml <br />
+2- To get a public IP, run:
+```
+kubectl expose deployment go-violin --type=LoadBalancer --name=violin-service
+```
+
